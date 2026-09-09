@@ -3,7 +3,7 @@
 ## 1. Identificação
 
 **Estudante:** Victor Hugo Chrisosthemos Teixeira
-**Disciplina:** Processamento Digital de Imagens  
+<br>**Disciplina:** Processamento Digital de Imagens  
 **Laboratórios:** M1.1, M1.2 e M1.3  
 **Linguagem utilizada:** Python
 

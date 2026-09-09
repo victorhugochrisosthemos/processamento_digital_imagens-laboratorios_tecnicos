@@ -3,25 +3,26 @@
 Projeto em Python reunindo as atividades dos tres laboratorios da M1
 <br>
 
-## Organizacao do codigo
-<br>
-A logica principal esta em:
+
+## Estrutura do projeto
 
 ```text
-src/pdi_lab/principal.py
-src/pdi_lab/funcoes.py
+src/pdi_lab/main.py
+src/pdi_lab/functions.py
+tests/test_laboratories.py
+kernels/
+images/input/
+images/output/
+results/
 ```
-<br><br>
 
-## Dependencias
+## Dependências
 
 ```powershell
 python -m pip install -r requirements.txt
 ```
 
-Nao e necessario criar ambiente virtual para executar o projeto
-
-<br>
+Não é obrigatório criar ambiente virtual para executar o projeto.
 
 ## Preparar o terminal no Windows PowerShell
 
@@ -45,71 +46,65 @@ Resultado esperado:
 
 ## Executar com uma imagem
 
-Exemplo com uma imagem colocada em `images/input/romero_brito.jpg`:
+Coloque sua imagem em `images/input/`. Exemplo com `romero_brito.jpg`:
 
 ```powershell
-python -m pdi_lab --entrada images/input/romero_brito.jpg --operacao inspecionar
+python -m pdi_lab --input images/input/romero_brito.jpg --operation inspect
 ```
 
-Sem `--saida`, o programa cria automaticamente `imagens_geradas` no diretorio atual.
+Se `--output` não for informado, o programa cria automaticamente a pasta `imagens_geradas` no diretório atual.
 
-
-
-### M1.1
+## M1.1
 
 ```powershell
-python -m pdi_lab --entrada images/input/romero_brito.jpg --operacao copiar
-python -m pdi_lab --entrada images/input/romero_brito.jpg --operacao canal_azul
-python -m pdi_lab --entrada images/input/romero_brito.jpg --operacao canal_verde
-python -m pdi_lab --entrada images/input/romero_brito.jpg --operacao canal_vermelho
-python -m pdi_lab --entrada images/input/romero_brito.jpg --operacao cinza_media
-python -m pdi_lab --entrada images/input/romero_brito.jpg --operacao cinza_ponderado
-python -m pdi_lab --entrada images/input/romero_brito.jpg --operacao quantizar --niveis 8
+python -m pdi_lab --input images/input/romero_brito.jpg --operation copy
+python -m pdi_lab --input images/input/romero_brito.jpg --operation channel_b
+python -m pdi_lab --input images/input/romero_brito.jpg --operation channel_g
+python -m pdi_lab --input images/input/romero_brito.jpg --operation channel_r
+python -m pdi_lab --input images/input/romero_brito.jpg --operation grayscale_average
+python -m pdi_lab --input images/input/romero_brito.jpg --operation grayscale_weighted
+python -m pdi_lab --input images/input/romero_brito.jpg --operation quantize --levels 8
 ```
 
-### M1.2
+## M1.2
 
 ```powershell
-python -m pdi_lab --entrada images/input/romero_brito.jpg --operacao brilho --valor 40
-python -m pdi_lab --entrada images/input/romero_brito.jpg --operacao contraste --alpha 1.5
-python -m pdi_lab --entrada images/input/romero_brito.jpg --operacao negativo
-python -m pdi_lab --entrada images/input/romero_brito.jpg --operacao limiarizar --limiar 128
-python -m pdi_lab --entrada images/input/romero_brito.jpg --operacao histograma
+python -m pdi_lab --input images/input/romero_brito.jpg --operation brightness --value 40
+python -m pdi_lab --input images/input/romero_brito.jpg --operation contrast --alpha 1.5
+python -m pdi_lab --input images/input/romero_brito.jpg --operation negative
+python -m pdi_lab --input images/input/romero_brito.jpg --operation threshold --threshold 128
+python -m pdi_lab --input images/input/romero_brito.jpg --operation histogram
 ```
 
-### M1.3
+## M1.3
 
 ```powershell
-python -m pdi_lab --entrada images/input/romero_brito.jpg --operacao filtro_media --tamanho-nucleo 3 --borda replicar
-python -m pdi_lab --entrada images/input/romero_brito.jpg --operacao media_ponderada --borda replicar
-python -m pdi_lab --entrada images/input/romero_brito.jpg --operacao convolucao --nucleo kernels/identidade_3x3.txt --borda replicar
-python -m pdi_lab --entrada images/input/romero_brito.jpg --operacao laplaciano --borda replicar
-python -m pdi_lab --entrada images/input/romero_brito.jpg --operacao sobel --borda replicar
+python -m pdi_lab --input images/input/romero_brito.jpg --operation mean_filter --kernel-size 3 --border replicate
+python -m pdi_lab --input images/input/romero_brito.jpg --operation weighted_mean --border replicate
+python -m pdi_lab --input images/input/romero_brito.jpg --operation convolution --kernel kernels/identity_3x3.txt --border replicate
+python -m pdi_lab --input images/input/romero_brito.jpg --operation laplacian --border replicate
+python -m pdi_lab --input images/input/romero_brito.jpg --operation sobel --border replicate
 ```
 
-## Nomes principais das operacoes
+## Operações disponíveis
 
 ```text
-inspecionar
-copiar
-canal_azul
-canal_verde
-canal_vermelho
-cinza_media
-cinza_ponderado
-quantizar
-brilho
-contraste
-negativo
-limiarizar
-histograma
-convolucao
-filtro_media
-media_ponderada
-laplaciano
+inspect
+copy
+channel_b
+channel_g
+channel_r
+grayscale_average
+grayscale_weighted
+quantize
+brightness
+contrast
+negative
+threshold
+histogram
+convolution
+mean_filter
+weighted_mean
+laplacian
 sobel
 ```
-
-## Compatibilidade
-
-Por exigencia do contrato tecnico, tambem sao aceitos `--input`, `--output`, `--operation`, `--levels`, `--value`, `--threshold`, `--kernel`, `--border` e os nomes oficiais das operacoes em ingles. A implementacao interna, entretanto, usa os nomes em portugues.

@@ -295,11 +295,3 @@ Aplica o operador Sobel para detectar bordas. São calculadas as variações nas
 ```powershell
 python -m pdi_lab --input images/input/romero_brito.jpg --operation sobel --border replicate
 ```
-
-
-
-# Declaração de uso de Inteligência Artificial no Projeto
-
-Foi utilizada a ferramenta ChatGPT como apoio durante o desenvolvimento do projeto.
-
-- Finalidade: apoio na revisão de requisitos, correção eventual de erros de código e documentação

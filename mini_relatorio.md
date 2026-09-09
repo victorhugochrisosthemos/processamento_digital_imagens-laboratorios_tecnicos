@@ -118,7 +118,7 @@ Não obstante, procurei utilizar a ferramenta com cautela, verificando as respos
 
 Além da IA Generativa, também utilizei como apoio conversas com colegas e questionamentos realizados durante as aulas. Dessa forma, a ferramenta não foi utilizada como única fonte para resolução das atividades.
 
-10. Referências utilizadas
+## 10. Referências utilizadas
 
 Para o desenvolvimento dos laboratórios foram utilizados principalmente os materiais fornecidos pelo professor na disciplina de Processamento Digital de Imagens, sendo eles:
 

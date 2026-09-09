@@ -8,8 +8,8 @@ Projeto em Python reunindo as atividades dos tres laboratorios da M1
 1. Coloque sua imagem em `images/input/`.
 2. Instale as dependências com `python -m pip install -r requirements.txt`.
 3. No PowerShell, execute `$env:PYTHONPATH="src"`.
-4. Rode `python -m pytest -q` para conferir os testes.
-5. Execute o programa usando `--input` e `--operation`.
+4. Ainda no PowerShell, no diretório do projeto, execute `python -m pytest -q` para conferir os testes.
+5. Então execute as funções do programa usando `--input` e `--operation`.
 
 Exemplo:
 

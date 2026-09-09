@@ -298,7 +298,7 @@ python -m pdi_lab --input images/input/romero_brito.jpg --operation sobel --bord
 
 
 
-# Declaração de uso de Inteligência Artificial
+# Declaração de uso de Inteligência Artificial no Projeto
 
 Foi utilizada a ferramenta ChatGPT como apoio durante o desenvolvimento do projeto.
 
